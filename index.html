@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 34 34%22%3E%3Crect width=%2234%22 height=%2234%22 rx=%229%22 fill=%22%232148d8%22/%3E%3Cpath d=%22M8 21c4-8 9 2 18-8%22 fill=%22none%22 stroke=%22white%22 stroke-width=%223.2%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
+<title>SystemFlow Studio | Websites for local trades in West Lancashire</title>
+<meta name="description" content="Simple, fast websites for roofers, builders and local trades in West Lancashire. £350 fixed price, live in 3 days. See your homepage before you pay.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: studio homepage — offer-led hero with a "search result" proof panel, what you get, process, price, about, contact */
+:root{
+  --bg:#f4f6f9; --surface:#ffffff; --ink:#111a24; --muted:#56616e; --line:#dce2ea;
+  --accent:#2148d8; --accent-ink:#ffffff; --accent-soft:#e3e9fd; --warn:#c2410c; --ok:#15803d;
+  --display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d1218; --surface:#151c25; --ink:#e9eef4; --muted:#9aa6b4; --line:#26313d;
+  --accent:#6f8dff; --accent-ink:#0b1020; --accent-soft:#1b2440; --warn:#fb923c; --ok:#4ade80; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1218; --surface:#151c25; --ink:#e9eef4; --muted:#9aa6b4; --line:#26313d;
+  --accent:#6f8dff; --accent-ink:#0b1020; --accent-soft:#1b2440; --warn:#fb923c; --ok:#4ade80; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4vw,44px);font-weight:800}
+h3{font-size:21px;font-weight:600}
+p{margin:0}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.muted{color:var(--muted)}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid transparent;font-family:var(--body);font-size:16px;cursor:pointer}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-line{border-color:var(--line);background:var(--surface)}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:22px;text-decoration:none}
+.logo svg{flex:none}
+.hdr-mail{font-weight:600;color:var(--muted);font-size:15px}
+
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-block:40px 72px}
+.hero h1{font-size:clamp(40px,6vw,68px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:20px;color:var(--muted);margin:20px 0 28px;max-width:36ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:15px;color:var(--muted)}
+.facts b{color:var(--ink)}
+
+/* proof panel: a local search result, before and after */
+.serp{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:14px;min-width:0;box-shadow:0 18px 40px -24px rgba(17,26,36,.35)}
+.serp-q{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--muted);font-size:15px}
+.res{border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:4px}
+.res .name{font-weight:700}
+.res .meta{font-size:14px;color:var(--muted)}
+.stars{color:#e0a100;letter-spacing:1px}
+.res .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.chip{font-size:13px;font-weight:600;border-radius:999px;padding:4px 11px;border:1px solid var(--line)}
+.chip.bad{color:var(--warn);border-color:currentColor}
+.chip.good{color:var(--ok);border-color:currentColor}
+.chip.site{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.res.after{border-color:var(--accent);background:var(--accent-soft)}
+.tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+section{padding-block:72px}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+.head{max-width:620px;margin-bottom:36px}
+.head p{margin-top:12px;color:var(--muted)}
+
+.gets{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px}
+.get{display:grid;gap:6px;min-width:0}
+.get svg{width:28px;height:28px;color:var(--accent);margin-bottom:4px}
+.get p{color:var(--muted);font-size:16px}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
+.step{border-top:3px solid var(--accent);padding-top:16px;display:grid;gap:8px;min-width:0}
+.step::before{counter-increment:s;content:"Step " counter(s);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.step p{color:var(--muted);font-size:16px}
+
+.price{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:stretch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;gap:14px;align-content:start;min-width:0}
+.card.main{border:2px solid var(--accent)}
+.amount{font-family:var(--display);font-size:64px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.amount small{font-family:var(--body);font-size:16px;font-weight:600;color:var(--muted)}
+.card ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.card li{color:var(--muted)}
+.card li b{color:var(--ink);font-weight:600}
+
+.about{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;max-width:780px}
+.avatar{width:84px;height:84px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:36px}
+.about p+p{margin-top:12px}
+.about p{color:var(--muted)}
+
+.contact{display:grid;gap:18px;justify-items:start}
+.mailbox{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.addr{font-family:var(--display);font-size:clamp(22px,4vw,34px);font-weight:600;word-break:break-all;user-select:all}
+#copied{font-size:14px;color:var(--ok);font-weight:600}
+
+footer{border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:24px}
+
+@media (max-width:860px){
+  .hero .wrap,.price{grid-template-columns:1fr}
+  .gets{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+}
+@media (max-width:540px){
+  .gets,.steps{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}
+  section{padding-block:52px}
+  .hdr-mail{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="var(--accent)"/><path d="M8 21c4-8 9 2 18-8" fill="none" stroke="var(--accent-ink)" stroke-width="3.2" stroke-linecap="round"/><circle cx="26" cy="13" r="2.6" fill="var(--accent-ink)"/></svg>
+      SystemFlow Studio
+    </a>
+    <span class="hdr-mail">michael@systemflowstudio.co.uk</span>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Websites for local trades · West Lancashire</p>
+      <h1>Your reviews are great. <em>Your website should be too.</em></h1>
+      <p class="lead">I build simple, fast websites for roofers, builders and other local trades. You see your homepage before you pay a penny.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#contact">Get your free homepage</a>
+        <a class="btn btn-line" href="#how">How it works</a>
+      </div>
+      <div class="facts">
+        <span><b>£350</b> fixed price</span>
+        <span><b>Live in 3 days</b></span>
+        <span><b>No monthly contract</b></span>
+      </div>
+    </div>
+
+    <div class="serp" aria-label="Example local search result">
+      <div class="serp-q">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m11 11 4 4" stroke="currentColor" stroke-width="2"/></svg>
+        roofer near Ormskirk
+      </div>
+      <span class="tag">Before</span>
+      <div class="res">
+        <span class="name">Your Roofing Ltd</span>
+        <span class="meta"><span class="stars">★★★★★</span> 4.9 · 48 reviews · Roofer</span>
+        <div class="row"><span class="chip bad">No website</span><span class="chip">Facebook only</span></div>
+      </div>
+      <span class="tag">After</span>
+      <div class="res after">
+        <span class="name">Your Roofing Ltd</span>
+        <span class="meta"><span class="stars">★★★★★</span> 4.9 · 48 reviews · Roofer</span>
+        <div class="row"><span class="chip site">Website</span><span class="chip good">Quote form</span><span class="chip good">Tap to call</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">What you get</p>
+      <h2>Everything a local trade site needs</h2>
+      <p>One page that tells customers what you do, where you work and how to reach you. Built to work on a phone first, because that's where most of your customers are looking.</p>
+    </div>
+    <div class="gets">
+      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>Made for phones</h3><p>Looks right and loads fast on any phone, tablet or computer.</p></div>
+      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><h3>Tap-to-call button</h3><p>Your number at the top of every screen, one tap away.</p></div>
+      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><h3>Quote form</h3><p>Enquiries land straight in your email, with the customer's details.</p></div>
+      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg><h3>Your Google reviews</h3><p>The reviews you've earned, front and centre.</p></div>
+      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h3>Areas you cover</h3><p>Listed by town, so local customers searching nearby can find you.</p></div>
+      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><h3>Your own .co.uk</h3><p>Set up on your own web address, plus a matching email if you want one.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">How it works</p>
+      <h2>You see it before you pay</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>I build your homepage</h3><p>Using your public details and reviews. Free, with no obligation.</p></div>
+      <div class="step"><h3>You decide</h3><p>Like it? Pay a 50% deposit. Not for you? No hard feelings.</p></div>
+      <div class="step"><h3>Send your photos</h3><p>Pictures of your work and any changes. A 10-minute job for you.</p></div>
+      <div class="step"><h3>It goes live</h3><p>Within 3 days, on your own web address. Then you pay the rest.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Price</p>
+      <h2>One fixed price. No surprises.</h2>
+    </div>
+    <div class="price">
+      <div class="card main">
+        <h3>Your website</h3>
+        <div class="amount">£350 <small>one-off</small></div>
+        <ul>
+          <li><b>£175 deposit</b> when you approve the design</li>
+          <li><b>£175</b> when the site is live</li>
+          <li>Domain and hosting set up for you</li>
+          <li>Two rounds of changes included</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Optional care plan</h3>
+        <div class="amount">£30 <small>per month</small></div>
+        <ul>
+          <li>Hosting and domain renewals handled</li>
+          <li>New photos, reviews and text changes</li>
+          <li>Cancel any time</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="about">
+      <div class="avatar" aria-hidden="true">M</div>
+      <div>
+        <p class="eyebrow">Who's building it</p>
+        <h2 style="margin-bottom:14px">Hi, I'm Michael</h2>
+        <p>I'm a developer based near Ormskirk. I build websites and automation tools for small businesses, and I keep things simple: one person, one fixed price, and you deal with me directly.</p>
+        <p>If you need something beyond a website, like online booking or automated quotes and reminders, ask. I build those too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap contact">
+    <p class="eyebrow">Get in touch</p>
+    <h2>Want to see your homepage?</h2>
+    <p class="muted">Email me your business name and I'll send you a free homepage design within 48 hours.</p>
+    <div class="mailbox">
+      <span class="addr" id="addr">michael@systemflowstudio.co.uk</span>
+      <button class="btn btn-primary" id="copy" type="button">Copy email</button>
+      <span id="copied" hidden>Copied</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 SystemFlow Studio · West Lancashire</span>
+    <span>systemflowstudio.co.uk</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var t=document.getElementById('addr').textContent, ok=document.getElementById('copied');
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('addr'));var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  try{navigator.clipboard.writeText(t).then(function(){ok.hidden=false;},sel);}catch(e){sel();}
+});
+</script>
+
+</body>
+</html>
