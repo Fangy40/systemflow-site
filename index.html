@@ -3,115 +3,120 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 34 34%22%3E%3Crect width=%2234%22 height=%2234%22 rx=%229%22 fill=%22%232148d8%22/%3E%3Cpath d=%22M8 21c4-8 9 2 18-8%22 fill=%22none%22 stroke=%22white%22 stroke-width=%223.2%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
-<title>SystemFlow Studio | Websites for local trades in West Lancashire</title>
-<meta name="description" content="Simple, fast websites for roofers, builders and local trades in West Lancashire. £350 fixed price, live in 3 days. See your homepage before you pay.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<title>SystemFlow Studio | Websites for trades, salons and local businesses</title>
+<meta name="description" content="Simple, honest websites for trades, salons and beauty clinics. £350 all in. See your homepage before you pay.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Public+Sans:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap">
 <style>
-html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
-/* Layout: studio homepage — offer-led hero with a "search result" proof panel, what you get, process, price, about, contact */
+body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: one person talking — hero with a sketched phone mockup and handwritten notes, a short letter, plain checklist, steps, one price, FAQ, contact */
 :root{
-  --bg:#f4f6f9; --surface:#ffffff; --ink:#111a24; --muted:#56616e; --line:#dce2ea;
-  --accent:#2148d8; --accent-ink:#ffffff; --accent-soft:#e3e9fd; --warn:#c2410c; --ok:#15803d;
-  --display:"Bricolage Grotesque","Avenir Next",system-ui,sans-serif;
-  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#f4f5f8; --paper:#ffffff; --ink:#18202e; --muted:#545d6d; --line:#d8dce4;
+  --green:#23395d; --green-ink:#ffffff; --mark:#f4b860; --pen:#b5601f;
+  --display:"Young Serif",Georgia,"Times New Roman",serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --hand:"Caveat","Bradley Hand","Segoe Print",cursive;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0d1218; --surface:#151c25; --ink:#e9eef4; --muted:#9aa6b4; --line:#26313d;
-  --accent:#6f8dff; --accent-ink:#0b1020; --accent-soft:#1b2440; --warn:#fb923c; --ok:#4ade80; color-scheme:dark}}
+  --bg:#10141c; --paper:#171d28; --ink:#e6eaf2; --muted:#a0a9b8; --line:#2a3242;
+  --green:#9db8ec; --green-ink:#0e1420; --mark:#7d5a1e; --pen:#f0b874; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0d1218; --surface:#151c25; --ink:#e9eef4; --muted:#9aa6b4; --line:#26313d;
-  --accent:#6f8dff; --accent-ink:#0b1020; --accent-soft:#1b2440; --warn:#fb923c; --ok:#4ade80; color-scheme:dark}
+  --bg:#10141c; --paper:#171d28; --ink:#e6eaf2; --muted:#a0a9b8; --line:#2a3242;
+  --green:#9db8ec; --green-ink:#0e1420; --mark:#7d5a1e; --pen:#f0b874; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
-.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
-h2{font-size:clamp(30px,4vw,44px);font-weight:800}
-h3{font-size:21px;font-weight:600}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.65}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.narrow{max-width:680px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.005em}
+h2{font-size:clamp(28px,4vw,38px)}
 p{margin:0}
-.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-.muted{color:var(--muted)}
+p+p{margin-top:14px}
 a{color:inherit}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid transparent;font-family:var(--body);font-size:16px;cursor:pointer}
-.btn-primary{background:var(--accent);color:var(--accent-ink)}
-.btn-line{border-color:var(--line);background:var(--surface)}
-.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.muted{color:var(--muted)}
+.hand{font-family:var(--hand);color:var(--pen);font-size:26px;line-height:1.1;font-weight:500}
+mark{background:linear-gradient(transparent 58%,var(--mark) 58%);color:inherit;padding:0 2px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:8px;font-weight:700;font-size:17px;text-decoration:none;border:2px solid transparent;font-family:var(--body);cursor:pointer}
+.btn-main{background:var(--green);color:var(--green-ink)}
+.btn-plain{border-color:var(--line);background:var(--paper)}
+.btn:focus-visible,summary:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
 
-header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;flex-wrap:wrap}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:22px;text-decoration:none}
-.logo svg{flex:none}
-.hdr-mail{font-weight:600;color:var(--muted);font-size:15px}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-size:22px;text-decoration:none}
+.logo span{color:var(--green)}
+.hdr-mail{font-size:15px;color:var(--muted)}
 
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding-block:40px 72px}
-.hero h1{font-size:clamp(40px,6vw,68px);font-weight:800}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.lead{font-size:20px;color:var(--muted);margin:20px 0 28px;max-width:36ch}
-.ctas{display:flex;flex-wrap:wrap;gap:12px}
-.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:15px;color:var(--muted)}
-.facts b{color:var(--ink)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-block:28px 72px}
+.hero h1{font-size:clamp(38px,5.4vw,60px)}
+.hero .lead{font-size:20px;color:var(--muted);margin:22px 0 28px;max-width:34ch}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.small{font-size:15px;color:var(--muted)}
 
-/* proof panel: a local search result, before and after */
-.serp{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:14px;min-width:0;box-shadow:0 18px 40px -24px rgba(17,26,36,.35)}
-.serp-q{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--muted);font-size:15px}
-.res{border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:grid;gap:4px}
-.res .name{font-weight:700}
-.res .meta{font-size:14px;color:var(--muted)}
-.stars{color:#e0a100;letter-spacing:1px}
-.res .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.chip{font-size:13px;font-weight:600;border-radius:999px;padding:4px 11px;border:1px solid var(--line)}
-.chip.bad{color:var(--warn);border-color:currentColor}
-.chip.good{color:var(--ok);border-color:currentColor}
-.chip.site{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-.res.after{border-color:var(--accent);background:var(--accent-soft)}
-.tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+/* sketched phone */
+.sketch{position:relative;min-width:0;display:flex;justify-content:center;padding-block:10px 30px}
+.phone{width:min(280px,100%);background:var(--paper);border:2px solid var(--ink);border-radius:30px;padding:14px 12px 18px;transform:rotate(2deg);box-shadow:8px 10px 0 var(--line)}
+.phone .notch{width:70px;height:8px;border-radius:8px;background:var(--line);margin:0 auto 12px}
+.ph-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;padding:8px 10px;background:var(--green);color:var(--green-ink);border-radius:10px}
+.ph-hero{padding:16px 6px 10px}
+.ph-hero b{display:block;font-family:var(--display);font-weight:400;font-size:21px;line-height:1.15}
+.ph-stars{color:#d9a400;font-size:13px;margin-top:6px}
+.ph-btn{margin-top:12px;background:var(--mark);color:#1c2420;font-weight:700;font-size:13px;text-align:center;border-radius:8px;padding:9px}
+.ph-rows{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 6px 0}
+.ph-rows div{height:54px;border-radius:8px;background:var(--bg);border:1px dashed var(--line);font-size:11px;color:var(--muted);display:grid;place-items:center}
+.note{position:absolute;max-width:170px}
+.note.n1{top:-6px;left:-10px;transform:rotate(-6deg)}
+.note.n2{bottom:0;right:-6px;transform:rotate(4deg);text-align:right}
+.note svg{display:block;color:var(--pen)}
 
-section{padding-block:72px}
-.band{background:var(--surface);border-block:1px solid var(--line)}
-.head{max-width:620px;margin-bottom:36px}
-.head p{margin-top:12px;color:var(--muted)}
+section{padding-block:68px}
+.band{background:var(--paper);border-block:1px solid var(--line)}
 
-.gets{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px}
-.get{display:grid;gap:6px;min-width:0}
-.get svg{width:28px;height:28px;color:var(--accent);margin-bottom:4px}
-.get p{color:var(--muted);font-size:16px}
+.letter{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
+.face{width:92px;height:92px;border-radius:50%;background:var(--green);color:var(--green-ink);display:grid;place-items:center;font-family:var(--display);font-size:40px;flex:none}
+.letter-body{min-width:0}
+.letter-body h2{margin-bottom:18px}
+.sig{margin-top:22px;font-family:var(--hand);font-size:34px;color:var(--pen);line-height:1}
+.sig small{display:block;font-family:var(--body);font-size:14px;color:var(--muted);margin-top:6px}
 
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:s}
-.step{border-top:3px solid var(--accent);padding-top:16px;display:grid;gap:8px;min-width:0}
-.step::before{counter-increment:s;content:"Step " counter(s);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-.step p{color:var(--muted);font-size:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.two > *{min-width:0}
+.checks{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
+.checks li{display:grid;grid-template-columns:26px 1fr;gap:10px;align-items:start}
+.checks svg{margin-top:5px;color:var(--green)}
+.steps{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:18px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);font-family:var(--display);font-size:22px;width:36px;height:36px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;line-height:1}
+.steps b{display:block}
 
-.price{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:stretch}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;gap:14px;align-content:start;min-width:0}
-.card.main{border:2px solid var(--accent)}
-.amount{font-family:var(--display);font-size:64px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
-.amount small{font-family:var(--body);font-size:16px;font-weight:600;color:var(--muted)}
-.card ul{margin:0;padding-left:20px;display:grid;gap:6px}
-.card li{color:var(--muted)}
-.card li b{color:var(--ink);font-weight:600}
+.price{background:var(--paper);border:2px solid var(--ink);border-radius:14px;padding:32px;display:grid;grid-template-columns:auto 1fr;gap:12px 36px;align-items:center;box-shadow:8px 10px 0 var(--line)}
+.price .amt{font-family:var(--display);font-size:clamp(56px,9vw,84px);line-height:1;font-variant-numeric:tabular-nums}
+.price ul{margin:0;padding-left:20px;display:grid;gap:4px}
+.price .extra{grid-column:1/-1;border-top:1px dashed var(--line);padding-top:16px;font-size:16px;color:var(--muted)}
 
-.about{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;max-width:780px}
-.avatar{width:84px;height:84px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:36px}
-.about p+p{margin-top:12px}
-.about p{color:var(--muted)}
+.faq{display:grid;gap:10px;margin-top:22px}
+details{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 20px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);font-size:22px;line-height:1;color:var(--green)}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--muted)}
 
-.contact{display:grid;gap:18px;justify-items:start}
-.mailbox{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.addr{font-family:var(--display);font-size:clamp(22px,4vw,34px);font-weight:600;word-break:break-all;user-select:all}
-#copied{font-size:14px;color:var(--ok);font-weight:600}
+.contact{text-align:left}
+.contact .addr{font-family:var(--display);font-size:clamp(22px,4.4vw,36px);word-break:break-all;user-select:all;display:block;margin:18px 0 20px}
+#copied{font-size:15px;color:var(--green);font-weight:700}
 
-footer{border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer{font-size:14px;color:var(--muted);border-top:1px solid var(--line)}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:24px}
 
 @media (max-width:860px){
-  .hero .wrap,.price{grid-template-columns:1fr}
-  .gets{grid-template-columns:1fr 1fr}
-  .steps{grid-template-columns:1fr 1fr}
+  .hero .wrap,.two{grid-template-columns:1fr}
+  .two{gap:44px}
+  .sketch{padding-block:40px 40px}
 }
-@media (max-width:540px){
-  .gets,.steps{grid-template-columns:1fr}
-  .about{grid-template-columns:1fr}
-  section{padding-block:52px}
+@media (max-width:560px){
+  .letter,.price{grid-template-columns:1fr}
   .hdr-mail{display:none}
+  section{padding-block:52px}
+  .note.n1{left:0}.note.n2{right:0}
+  .price{padding:24px}
 }
 </style>
 </head>
@@ -119,10 +124,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 
 <header>
   <div class="wrap">
-    <a class="logo" href="#top">
-      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect width="34" height="34" rx="9" fill="var(--accent)"/><path d="M8 21c4-8 9 2 18-8" fill="none" stroke="var(--accent-ink)" stroke-width="3.2" stroke-linecap="round"/><circle cx="26" cy="13" r="2.6" fill="var(--accent-ink)"/></svg>
-      SystemFlow Studio
-    </a>
+    <a class="logo" href="#top">SystemFlow <span>Studio</span></a>
     <span class="hdr-mail">michael@systemflowstudio.co.uk</span>
   </div>
 </header>
@@ -130,126 +132,99 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 <div class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Websites for local trades · West Lancashire</p>
-      <h1>Your reviews are great. <em>Your website should be too.</em></h1>
-      <p class="lead">I build simple, fast websites for roofers, builders and other local trades. You see your homepage before you pay a penny.</p>
+      <h1>Websites for local businesses. <mark>See yours before you pay.</mark></h1>
+      <p class="lead">Simple, honest websites for trades, salons and beauty clinics. One fixed price, and you deal with one person from start to finish.</p>
       <div class="ctas">
-        <a class="btn btn-primary" href="#contact">Get your free homepage</a>
-        <a class="btn btn-line" href="#how">How it works</a>
-      </div>
-      <div class="facts">
-        <span><b>£350</b> fixed price</span>
-        <span><b>Live in 3 days</b></span>
-        <span><b>No monthly contract</b></span>
+        <a class="btn btn-main" href="#contact">Ask for your free homepage</a>
+        <a class="btn btn-plain" href="#price">£350, all in</a>
       </div>
     </div>
 
-    <div class="serp" aria-label="Example local search result">
-      <div class="serp-q">
-        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m11 11 4 4" stroke="currentColor" stroke-width="2"/></svg>
-        roofer near Ormskirk
+    <div class="sketch" aria-hidden="true">
+      <div class="note n1">
+        <span class="hand">your business, your reviews</span>
+        <svg width="70" height="40" viewBox="0 0 70 40"><path d="M6 6c20 4 34 12 46 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M44 30l9 3-1-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <span class="tag">Before</span>
-      <div class="res">
-        <span class="name">Your Roofing Ltd</span>
-        <span class="meta"><span class="stars">★★★★★</span> 4.9 · 48 reviews · Roofer</span>
-        <div class="row"><span class="chip bad">No website</span><span class="chip">Facebook only</span></div>
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="ph-top"><span>Your Roofing Ltd</span><span>Call ☎</span></div>
+        <div class="ph-hero">
+          <b>Roof repairs &amp; new roofs in your area</b>
+          <div class="ph-stars">★★★★★ 4.9 · 48 Google reviews</div>
+          <div class="ph-btn">Get a free quote</div>
+        </div>
+        <div class="ph-rows"><div>your photos</div><div>your photos</div><div>areas covered</div><div>quote form</div></div>
       </div>
-      <span class="tag">After</span>
-      <div class="res after">
-        <span class="name">Your Roofing Ltd</span>
-        <span class="meta"><span class="stars">★★★★★</span> 4.9 · 48 reviews · Roofer</span>
-        <div class="row"><span class="chip site">Website</span><span class="chip good">Quote form</span><span class="chip good">Tap to call</span></div>
+      <div class="note n2">
+        <span class="hand">built free, before<br>you decide anything</span>
       </div>
     </div>
   </div>
 </div>
 
 <section class="band">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">What you get</p>
-      <h2>Everything a local trade site needs</h2>
-      <p>One page that tells customers what you do, where you work and how to reach you. Built to work on a phone first, because that's where most of your customers are looking.</p>
+  <div class="wrap two">
+    <div>
+      <h2>What you get</h2>
+      <ul class="checks">
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A site that works properly on a phone, because that's where most customers look</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Your number at the top, so people can ring or book with one tap</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>A quote or booking form that sends enquiries straight to your email, or a link to the booking system you already use</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Your Google reviews and photos of your own work</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Your services, prices if you want them, and the areas you cover, so local searches can find you</span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M3 9.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Your own web address, like yourname.co.uk, set up for you</span></li>
+      </ul>
     </div>
-    <div class="gets">
-      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>Made for phones</h3><p>Looks right and loads fast on any phone, tablet or computer.</p></div>
-      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><h3>Tap-to-call button</h3><p>Your number at the top of every screen, one tap away.</p></div>
-      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><h3>Quote form</h3><p>Enquiries land straight in your email, with the customer's details.</p></div>
-      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg><h3>Your Google reviews</h3><p>The reviews you've earned, front and centre.</p></div>
-      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h3>Areas you cover</h3><p>Listed by town, so local customers searching nearby can find you.</p></div>
-      <div class="get"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><h3>Your own .co.uk</h3><p>Set up on your own web address, plus a matching email if you want one.</p></div>
+    <div>
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><span><b>I build your homepage</b>Using your public details and reviews. Free, no strings.</span></li>
+        <li><span><b>You have a look</b>If you like it, pay a £175 deposit. If not, no hard feelings.</span></li>
+        <li><span><b>Send me some photos</b>Six to ten pictures of your work, straight from your phone.</span></li>
+        <li><span><b>It goes live</b>Within 3 days, on your own address. Then you pay the other £175.</span></li>
+      </ol>
     </div>
   </div>
 </section>
 
-<section id="how">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">How it works</p>
-      <h2>You see it before you pay</h2>
-    </div>
-    <div class="steps">
-      <div class="step"><h3>I build your homepage</h3><p>Using your public details and reviews. Free, with no obligation.</p></div>
-      <div class="step"><h3>You decide</h3><p>Like it? Pay a 50% deposit. Not for you? No hard feelings.</p></div>
-      <div class="step"><h3>Send your photos</h3><p>Pictures of your work and any changes. A 10-minute job for you.</p></div>
-      <div class="step"><h3>It goes live</h3><p>Within 3 days, on your own web address. Then you pay the rest.</p></div>
+<section id="price">
+  <div class="wrap narrow">
+    <div class="price">
+      <div class="amt">£350</div>
+      <div>
+        <p style="font-weight:700;margin-bottom:6px">One price. No monthly contract.</p>
+        <ul class="muted">
+          <li>£175 when you approve the design</li>
+          <li>£175 when it's live</li>
+          <li>Two rounds of changes included</li>
+        </ul>
+      </div>
+      <p class="extra">Want me to look after it afterwards? For £30 a month I'll handle hosting and renewals, add new photos and reviews, and make text changes whenever you ask. Cancel any time. Entirely optional.</p>
     </div>
   </div>
 </section>
 
 <section class="band">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">Price</p>
-      <h2>One fixed price. No surprises.</h2>
-    </div>
-    <div class="price">
-      <div class="card main">
-        <h3>Your website</h3>
-        <div class="amount">£350 <small>one-off</small></div>
-        <ul>
-          <li><b>£175 deposit</b> when you approve the design</li>
-          <li><b>£175</b> when the site is live</li>
-          <li>Domain and hosting set up for you</li>
-          <li>Two rounds of changes included</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Optional care plan</h3>
-        <div class="amount">£30 <small>per month</small></div>
-        <ul>
-          <li>Hosting and domain renewals handled</li>
-          <li>New photos, reviews and text changes</li>
-          <li>Cancel any time</li>
-        </ul>
-      </div>
+  <div class="wrap narrow">
+    <h2>Fair questions</h2>
+    <div class="faq">
+      <details open><summary>Do I need to do anything technical?</summary><p>No. You send photos and tell me what you want changed. I do the rest, including setting up your web address.</p></details>
+      <details><summary>What if I don't like the homepage?</summary><p>Then you don't pay anything. Or tell me what's wrong and I'll have another go.</p></details>
+      <details><summary>Who owns the website?</summary><p>You do. Your web address is registered in your name, and if you ever want to move it somewhere else, I'll help you do it.</p></details>
+      <details><summary>Why is it only £350?</summary><p>Because it's one page, done well, without the agency overheads. Most local businesses don't need a twenty-page website. They need people to find them and get in touch.</p></details>
+      <details><summary>Can I change things later?</summary><p>Yes. Two rounds of changes are included, and after that small updates are covered by the care plan, or quoted separately if you'd rather not have one.</p></details>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="about">
-      <div class="avatar" aria-hidden="true">M</div>
-      <div>
-        <p class="eyebrow">Who's building it</p>
-        <h2 style="margin-bottom:14px">Hi, I'm Michael</h2>
-        <p>I'm a developer based near Ormskirk. I build websites and automation tools for small businesses, and I keep things simple: one person, one fixed price, and you deal with me directly.</p>
-        <p>If you need something beyond a website, like online booking or automated quotes and reminders, ask. I build those too.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="contact">
-  <div class="wrap contact">
-    <p class="eyebrow">Get in touch</p>
-    <h2>Want to see your homepage?</h2>
-    <p class="muted">Email me your business name and I'll send you a free homepage design within 48 hours.</p>
-    <div class="mailbox">
-      <span class="addr" id="addr">michael@systemflowstudio.co.uk</span>
-      <button class="btn btn-primary" id="copy" type="button">Copy email</button>
+<section id="contact">
+  <div class="wrap narrow contact">
+    <h2>Want to see yours?</h2>
+    <p class="muted" style="margin-top:12px">Email me your business name and I'll send your homepage within 48 hours. No obligation, and no sales calls.</p>
+    <span class="addr" id="addr">michael@systemflowstudio.co.uk</span>
+    <div class="ctas">
+      <a class="btn btn-main" href="mailto:michael@systemflowstudio.co.uk?subject=Free%20homepage%20design">Email me</a>
+      <button class="btn btn-plain" id="copy" type="button">Copy email address</button>
       <span id="copied" hidden>Copied</span>
     </div>
   </div>
@@ -257,16 +232,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 
 <footer>
   <div class="wrap">
-    <span>© 2026 SystemFlow Studio · West Lancashire</span>
-    <span>systemflowstudio.co.uk</span>
+    <span>© 2026 SystemFlow Studio</span>
+    <span>Websites for trades, salons and local businesses</span>
   </div>
 </footer>
 
 <script>
 document.getElementById('copy').addEventListener('click',function(){
-  var t=document.getElementById('addr').textContent, ok=document.getElementById('copied');
-  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('addr'));var s=getSelection();s.removeAllRanges();s.addRange(r);}
-  try{navigator.clipboard.writeText(t).then(function(){ok.hidden=false;},sel);}catch(e){sel();}
+  var el=document.getElementById('addr'),ok=document.getElementById('copied');
+  function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+  try{navigator.clipboard.writeText(el.textContent).then(function(){ok.hidden=false;},sel);}catch(e){sel();}
 });
 </script>
 
